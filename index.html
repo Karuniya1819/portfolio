@@ -6,7 +6,7 @@
 <title>Karuniya M | Portfolio</title>
 
 <!-- Google Fonts -->
-<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@500;700&family=Nunito:wght@300;500;700&display=swap" rel="stylesheet">
 
 <style>
   :root {
@@ -18,11 +18,15 @@
   }
   * {margin: 0; padding: 0; box-sizing: border-box;}
   body {
-    font-family: 'Poppins', sans-serif;
+    font-family: 'Nunito', sans-serif;
     background: var(--bg);
     color: var(--text);
     line-height: 1.6;
     overflow-x: hidden;
+  }
+  h1, h2, h3 {
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 700;
   }
   header {
     background: var(--primary);
@@ -72,8 +76,8 @@
     text-decoration: none;
     transition: all 0.3s ease-in-out;
     animation: pulseBox 2s infinite alternate;
-    opacity: 1; /* Always visible */
-    transform: scale(1); /* Default size */
+    opacity: 1;
+    transform: scale(1);
   }
   .resume-box:hover {
     background: var(--primary);
@@ -108,7 +112,6 @@
     transform: translateY(-8px) scale(1.02);
     animation: blinkGlow 1s infinite alternate;
   }
-  /* Blink glow keyframes */
   @keyframes blinkGlow {
     0% { box-shadow: 0 0 10px rgba(162, 128, 185, 0.4); }
     100% { box-shadow: 0 0 25px rgba(162, 128, 185, 0.8); }
@@ -149,7 +152,6 @@
 <section id="home" class="hero">
   <h1>Hi, I'm <span>Karuniya M</span></h1>
   <p>Electronics and Electronics Engineering Student | Tech Enthusiast</p>
-  <!-- BIG Download Resume Box -->
   <a href="karu resume.pdf_20250703_095222_0000 (1).pdf" download class="resume-box">📄 Download My Resume</a>
 </section>
 
@@ -165,10 +167,10 @@
   <h2>Skills</h2>
   <div class="card">
     <ul>
-      <li>Python (Intermediate)</li>
+      <li>Python</li>
       <li>Matlab</li>
-      <li>Designing (Beginner)</li>
-      <li>C Programming (Beginner)</li>
+      <li>Designing</li>
+      <li>C Programming</li>
       <li>Good Communication Skills</li>
       <li>Effective Worker</li>
     </ul>
@@ -187,7 +189,7 @@
   </div>
   <div class="card">
     <h3>SSLC</h3>
-    <p>Government Girls HSS | 2020 | 70.2%</p>
+    <p>Government Girls HSS | 2020 | 69%</p>
   </div>
 </section>
 
@@ -231,7 +233,7 @@
   <div class="card">
     <p><strong>Email:</strong> karuniyakaru18@gmail.com</p>
     <p><strong>Phone:</strong> +91 8072249358</p>
-    <p><strong>Location:</strong>Coimbatore</p>
+    <p><strong>Location:</strong> Coimbatore</p>
     <p><strong>LinkedIn:</strong> <a href="https://www.linkedin.com/in/karuniya-m-9608b1372" target="_blank">View Profile</a></p>
   </div>
 </section>
@@ -247,12 +249,10 @@
 <script>
   gsap.registerPlugin(ScrollTrigger);
 
-  // Hero animations
   gsap.from(".hero h1", {opacity: 0, y: -40, duration: 1});
   gsap.from(".hero p", {opacity: 0, y: 20, duration: 1, delay: 0.3});
   gsap.from(".resume-box", {y: 30, duration: 1, delay: 0.6, ease: "elastic.out(1, 0.5)"});
 
-  // Cards animation on scroll
   gsap.utils.toArray(".card").forEach(card => {
     gsap.from(card, {
       scrollTrigger: {
@@ -266,7 +266,6 @@
     });
   });
 
-  // Floating effect for header logo
   gsap.to(".logo", {
     y: 5,
     repeat: -1,
